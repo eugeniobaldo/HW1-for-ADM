@@ -576,7 +576,44 @@ array=np.zeros((x[0],x[1],x[2]), dtype=int)
 print(array)
 array=np.ones((x[0],x[1],x[0]), dtype=int)
 print(array)
+
+#exercise 37: exception
+test_cases=int(input())
+
+for i in range(test_cases):
+    l1=list(input().split())
+    x=l1[0]
+    y=l1[1]
+    try:
+            print(int(int(x)/int(y)))
+    except ZeroDivisionError:
+            print("Error Code: integer division or modulo by zero")
+    except ValueError:
+            z="'"+str(y)+"'".strip(" ") 
+            print("Error Code: invalid literal for int() with base 10:",z)
+    i=i+1
+
+#exercise 38: Zipped!
+N=list(map(int,input().split()))
+student_number=N[0]
+subject_number=N[1]
+i=0
+total_list=[]
+for i in range (subject_number):
+    mark_list=list(map(float,input().split()))
+    total_list.append(mark_list)
+subject_mark=list(zip(*total_list))
+for i in range(student_number):
+  marks_sum=sum(subject_mark[i])
+  print(round(marks_sum/subject_number,1))
+  i=i+1
+
+
+
     
+
+	
+	
 #problem2
 
 #exercise1: birthday cake candles
@@ -754,7 +791,6 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
     insertionSort1(n, arr)
-
 
 
 
